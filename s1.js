@@ -224,7 +224,7 @@ function loopThrough(arr) {
   nextButton.disabled = false;
   nextButton.style.display = 'block';
   indexInfo.style.display = 'block';
-  var sum = 0;
+  var sum = 0.0;
   arr.innerHTML = sum;
 
   nextButton.onclick = () => {
@@ -232,9 +232,10 @@ function loopThrough(arr) {
     console.log(document.getElementById('icon-button').style.display);
     const cnt = Number(arr.innerHTML) + parseInt(arr[i])
     arr.innerHTML = cnt
-    const pre = cnt - parseInt(arr[i])
+    const currentLength = i + 1
+    const avg = cnt / currentLength
     document.getElementById('icon-button').style.display = 'block';
-    indexInfo.innerHTML = `int sum = 0; <br><br> for (int index = 0; index < array.length; index++) <br><br> <span margin-left: "20px> sum += array[index] </span> <br><br> Previous sum of the array is <span style='background-color:yellow'><b> ${pre}</b></span> <br><br> Current index is <span style='background-color:yellow'><b> ${i}</b></span> <br><br> Value of the current element is <span style='background-color:yellow'><b> ${arr[i]}</b></span> <br><br> Sum of the array is: <span style='background-color:yellow'><b> ${cnt} </b></span>`;
+    indexInfo.innerHTML = `double sum = 0.0; <br><br> double average; <br><br> for (int index = 0; index < array.length; index++) <br><br> sum += array[index] <br><br> average = sum / arr.length <br><br> Sum of the array is <span style='background-color:yellow'><b> ${cnt}</b></span> <br><br> Length of the Array is  <span style='background-color:yellow'><b> ${i + 1}</b></span> <br><br> Average of the Array is <span style='background-color:yellow'><b> ${avg}</b></span>`;
 
     const arrayElement = document.getElementsByClassName(`.arrayEl${i}`);
     const lastArrayElement = document.getElementsByClassName(`.arrayEl${i - 1}`);
@@ -327,30 +328,33 @@ window.onclick = (event) => {
 };
 
 // Loop through Average
-const nextButton1 = document.getElementById('next-button1');
+// const nextButton1 = document.getElementById('next-button1');
 // const loopContent1 = document.getElementById('loop-content1');
 // const indexInfo1 = document.getElementById('index-info1');
 
+// function incrementArrIndex(index) {
+//   console.log('inc');
+//   return index + 1;
+// }
 
-// function loopThrough(arr) {
+// function loopThrough1(arr) {
 //   var i = 0;
 //   loopContent.style.display = 'block';
-//   document.getElementById('icon-button1').style.display = 'none';
-//   nextButton.disabled = false;
-//   nextButton.style.display = 'block';
+//   document.getElementById('icon-button').style.display = 'none';
+//   nextButton1.disabled = false;
+//   nextButton1.style.display = 'block';
 //   indexInfo.style.display = 'block';
-//   var sum = 0.0;
+//   var sum = 0;
 //   arr.innerHTML = sum;
 
-//   nextButton.onclick = () => {
+//   nextButton1.onclick = () => {
 //     console.log(i);
-//     console.log(document.getElementById('icon-button1').style.display);
+//     console.log(document.getElementById('icon-button').style.display);
 //     const cnt = Number(arr.innerHTML) + parseInt(arr[i])
 //     arr.innerHTML = cnt
-//     const currentLength = i + 1
-//     const avg = cnt / currentLength
-//     document.getElementById('icon-button1').style.display = 'block';
-//     indexInfo.innerHTML = `double sum = 0.0; <br><br> double average; <br><br> for (int index = 0; index < array.length; index++) <br><br> sum += array[index] <br><br> average = sum / arr.length <br><br> Sum of the array is <span style='background-color:yellow'><b> ${cnt}</b></span> <br><br> Length of the Array is  <span style='background-color:yellow'><b> ${i + 1}</b></span> <br><br> Average of the Array is <span style='background-color:yellow'><b> ${avg}</b></span>`;
+//     const pre = cnt - parseInt(arr[i])
+//     document.getElementById('icon-button').style.display = 'block';
+//     indexInfo.innerHTML = `sum = 0 <br><br> for (int index = 0; index < array.length; index++) <br><br>       sum += array[index] <br><br> Previous sum of the array is <span style='background-color:yellow'><b> ${pre}</b></span> <br><br> Current index is <span style='background-color:yellow'><b> ${i}</b></span> <br><br> Value of the current element is <span style='background-color:yellow'><b> ${arr[i]}</b></span> <br><br> Sum of the array is: <span style='background-color:yellow'><b> ${cnt} </b></span>`;
 
 //     const arrayElement = document.getElementsByClassName(`.arrayEl${i}`);
 //     const lastArrayElement = document.getElementsByClassName(`.arrayEl${i - 1}`);
@@ -358,9 +362,9 @@ const nextButton1 = document.getElementById('next-button1');
 //     if (lastArrayElement[0] != undefined) {
 //       if (arr[i] == undefined) {
 //         indexInfo.innerHTML = 'END OF ARRAY';
-//         document.getElementById('icon-button1').style.display = 'none';
-//         nextButton.disabled = true;
-//         document.getElementById('restart-loop1').style.display = 'block';
+//         document.getElementById('icon-button').style.display = 'none';
+//         nextButton1.disabled = true;
+//         document.getElementById('restart-loop').style.display = 'block';
 //         lastArrayElement[0].style.backgroundColor = 'white';
 //       }
 
@@ -374,72 +378,26 @@ const nextButton1 = document.getElementById('next-button1');
 //   console.log(i);
 // }
 
-// const startOverButton1 = document.getElementById('restart-loop1');
-// startOverButton1.onclick = () => {
+// // const startOverButton = document.getElementById('restart-loop');
+// startOverButton.onclick = () => {
 //   console.log('start');
 //   loopThrough(currentArr);
 //   loopContent.style.display = 'none';
-//   startOverButton1.style.display = 'none';
-//   nextButton.style.display = 'none';
+//   startOverButton.style.display = 'none';
+//   nextButton1.style.display = 'none';
 //   indexInfo.innerHTML = '';
 // };
 
 // const loopThroughButton1 = document.getElementById('loop-through-button1');
 // loopThroughButton1.onclick = () => {
-//   loopThrough(currentArr);
+//   loopThrough1(currentArr);
 // };
 
-// const indexInfoPopup1 = document.getElementById('index-info-popup1');
-// const iconButton1 = document.getElementById('icon-button1');
-// iconButton1.onclick = () => {
-//   indexInfoPopup1.style.display = 'block';
+// // const indexInfoPopup = document.getElementById('index-info-popup');
+// // const iconButton = document.getElementById('icon-button');
+// iconButton.onclick = () => {
+//   indexInfoPopup.style.display = 'block';
 //   console.log('clicked');
-// };
-
-// const span1 = document.getElementsByClassName('close1');
-// span1[0].onclick = () => {
-//   console.log(document.getElementsByClassName('close1'));
-//   arrayPopup.style.display = 'none';
-// };
-// span1[1].onclick = () => {
-//   pushPopup.style.display = 'none';
-// };
-// span1[2].onclick = () => {
-//   popPopup.style.display = 'none';
-// };
-// span1[3].onclick = () => {
-//   enqueuePopup.style.display = 'none';
-// };
-// span1[4].onclick = () => {
-//   dequeuePopup.style.display = 'none';
-// };
-// span1[5].onclick = () => {
-//   indexInfoPopup.style.display = 'none';
-//   console.log('closing time');
-// };
-
-// window.onclick = (event) => {
-//   if (event.target === loopContent1) {
-//     loopContent1.style.display = 'none';
-//   }
-//   if (event.target === arrayPopup1) {
-//     arrayPopup.style1.display = 'none';
-//   }
-//   if (event.target === pushPopup) {
-//     pushPopup.style.display = 'none';
-//   }
-//   if (event.target === popPopup) {
-//     popPopup.style.display = 'none';
-//   }
-//   if (event.target === enqueuePopup) {
-//     enqueuePopup.style.display = 'none';
-//   }
-//   if (event.target === dequeuePopup) {
-//     dequeuePopup.style.display = 'none';
-//   }
-//   if (event.target === indexInfoPopup) {
-//     indexInfoPopup.style.display = 'none';
-//   }
 // };
 
 
