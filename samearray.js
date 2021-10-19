@@ -199,6 +199,7 @@ function loopThrough(arr, arr2) {
     }
     else {
       indexInfo.innerHTML = `<br><br> Value at index <span style='background-color:yellow'><b>${i} </b></span> of Array_1 is <span style='background-color: yellow'><b>${arr[i]} </b></span> <br> Value at index <span style='background-color:yellow'><b>${j} </b></span> of Array_2 is <span style='background-color:yellow'><b>${arr2[j]}</b></span>`;
+      
       if(parseInt(arr[i]) != parseInt(arr2[j])){
       indexInfo.innerHTML = `<br><br> <span style='background-color:red'><b> Two arrays are not equal. </b></span> <br> Value at index <span style='background-color:yellow'><b>${i} </b></span> of Array_1 is <span style='background-color:green'><b>${arr[i]} </b></span> <br> Value at index <span style='background-color:yellow'><b>${j}</b></span> of Array_2 is <span style='background-color:blue'><b>${arr2[j]} </b></span>`;
       document.getElementById('icon-button').style.display = 'none';
